@@ -1,0 +1,85 @@
+
+	ul li{list-style: none;}
+	*{
+		margin-left: 0;padding-left: 0;
+	}
+	
+	#deng{
+		width: 858px;
+		height: 858px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		margin: 0 auto ;
+		animation: show 2s linear infinite
+	}
+
+
+	.shanDeng{
+		background-image: url(../img/shandeng1.png);
+	}
+	.shanDeng.shanDeng2{
+		background-image: url(../img/shandeng2.png);
+	}
+
+	#btn .cjBtnDom,#btn .cjBtn,.shanDeng .active,.shanDeng li{
+		background-repeat: no-repeat;
+		background-size: 100%;
+		
+	}
+	#luck{
+		position: relative;
+	}
+	.boxprize{
+		overflow: hidden;
+		padding: 60px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:space-between;
+	
+	}
+	#luck .boxprize li{
+		width: 180px;
+		height: 180px;
+		flex-shrink:0;
+	}
+	.boxprize li:nth-child(6),.boxprize li:nth-child(7),.boxprize li:nth-child(10),.boxprize li:nth-child(11){
+		visibility: hidden;
+	}
+	
+	#btn{
+		width:360px;
+		height: 360px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		position: absolute;
+		left:50%;
+		top:50%;
+		-webkit-transform: translate(-50%,-50%)
+	}
+	#btn.cjBtn{
+		background-image: url(../img/buttonUp.png);
+	}
+	#btn.cjBtnDom{
+		background-image: url(../img/buttonDown.png);
+	}
+
+
+	#luck .active{
+		background-image: url(../img/active.png);
+	}
+	.shanDeng li{
+		text-align: center;
+		background-image: url(../img/proBj.png);
+	}
+	button{
+		margin: 0;
+		padding: 0;
+		outline: none; 
+	}
+	@keyframes show{
+		0%   {background-image: url(../img/shandeng1.png)}
+		25%  {background-image: url(../img/shandeng2.png)}
+		50%  {background-image: url(../img/shandeng1.png)}
+		75%  {background-image: url(../img/shandeng2.png)}
+		100% {background-image: url(../img/shandeng1.png)}
+	}
