@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// bind 特性来完成
+// 返回一个函数
+// 1、基础结构如此
+Function.prototype.mybind = function(){
+    
+    return function(){
+
+    }
+}
+// 2、可以将多个参数进行拼接,最后执行,截取第一个参数目标this
+Function.prototype.mybind = function(){
+    var [obj,...rest] = [...arguments];
+    var _this = this
+    return function(){
+        return _this.apply(obj,[...rest,...arguments])
+    }
+}
+
+</script>
+</body>
+</html>
