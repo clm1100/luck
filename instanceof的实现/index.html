@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function F(){
+
+}   
+F.prototype.say = function(){}
+
+function S(){
+
+}
+S.prototype = new F();
+var s = new S()
+console.log(s instanceof F);
+
+function myinstanceof(s,f){
+    var root =  f.prototype
+    var proto = s;
+    // while循环取属性方法
+    while(proto=proto.__proto__){
+        console.log(333)
+        if(proto==root){
+            return true
+        }
+    }
+    return false
+
+}
+
+console.log(myinstanceof(s,Array));
+
+</script> 
+</body>
+</html>
