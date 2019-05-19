@@ -21,3 +21,13 @@ var newadd = curry(add);
 // console.log(newadd(1)(2)(9))
 console.log(newadd(1,2,9))
 
+
+//简洁写法
+ function curring(fn){
+    return function curried(...args){
+        return args.length >= fn.length ? fn.call(this,...args):(...rest)=>{
+            return curried.call(this,...args,...rest)
+        }
+    }
+}
+
